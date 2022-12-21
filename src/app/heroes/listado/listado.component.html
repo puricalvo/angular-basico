@@ -1,0 +1,21 @@
+<p>listado de Heroes</p>
+
+<div *ngIf="heroeBorrado; else noBorrado"> <!-- *ngIf sirve para regresar una condiccion : true, false  o '' vacio-->
+    <h3>Heroe Borrado: <small>{{ heroeBorrado }}</small></h3>   
+</div>
+
+<ng-template #noBorrado><!-- el signo ! sirve para cambiar la condiccion -->
+    <h3>No ha borrado nada.</h3>   
+</ng-template>
+
+<button (click)="borrarHeroe()">
+    Borrar 
+</button>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index"> <!-- *ngFor sirve para duplicar elementos en HTML -->
+        {{ i + 1 }} - {{ heroe }} 
+    </li>
+</ul>
+
+
